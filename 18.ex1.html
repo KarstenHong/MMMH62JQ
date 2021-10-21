@@ -20,9 +20,26 @@
                     <td>0912345678</td>
                     <td>elonmusk@gmail.com</td>
                 </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Elon Musk</td>
+                    <td>0912345678</td>
+                    <td>elonmusk@gmail.com</td>
+                </tr>
             </table>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $('input').click(function () {
+            console.log('hi', $(this));
+            // $(this).parent();
+        });
+    </script>
 </body>
 
 </html>
