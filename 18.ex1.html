@@ -37,7 +37,7 @@
 
         $('input').click(function () {
             console.log('hi', $(this));
-            // $(this).parent();
+            $(this).parentsUntil('table').css('background', 'red');
         });
     </script>
 </body>

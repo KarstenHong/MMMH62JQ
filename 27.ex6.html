@@ -47,16 +47,25 @@
         ];
 
 
+        // 功能：城市改變的時候，修改三個 option 的文字。
+
         // 觸發點是城市被改變的時候
         $('#city').change(function () {
-            console.log('hi', $(this).val());
-            console.log('districtArray data:', districtArray[$(this).val()]);
-            // 之後要跑迴圈去修改第二個下拉式選單裡的內容
+            // console.log('hi', $(this).val());
+            // console.log('districtArray data:', districtArray[$(this).val()]);
+            const cityVal = $(this).val();
+
+            $('#district option').each(function (index, item) {
+                // console.log('index:', index);
+                // console.log('item:', $(item).text());
+                // console.log('text:', districtArray[cityVal][index]);
+                $(item).text(districtArray[cityVal][index]);
+            });
         });
 
 
         // 修改 option 文字的提示：
-        console.log('option ', $('option').eq(3).text('中正區'));
+        // console.log('option ', $('option').eq(3).text('中正區'));
     </script>
 
 
