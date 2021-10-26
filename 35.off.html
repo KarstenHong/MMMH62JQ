@@ -25,14 +25,14 @@
         $('#btnOn').on('click', function () {
             console.log('on clicked');
             $('#btnHi').on('click', sayHi);
-        })
+        });
 
 
         $('#btnOff').click(function () {
             console.log('off clicked');
-            // 執行解除綁定
+            // 等按了之後才會執行解除綁定這一行的效果
             $('#btnHi').off('click', sayHi);
-        })
+        });
 
     </script>
 </body>

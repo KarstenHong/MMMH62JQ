@@ -26,6 +26,18 @@
                     <td>0912345678</td>
                     <td>elonmusk@gmail.com</td>
                 </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Elon Musk</td>
+                    <td>0912345678</td>
+                    <td>elonmusk@gmail.com</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Elon Musk</td>
+                    <td>0912345678</td>
+                    <td>elonmusk@gmail.com</td>
+                </tr>
             </table>
         </div>
     </div>
@@ -37,7 +49,24 @@
 
         $('input').click(function () {
             console.log('hi', $(this));
-            $(this).parentsUntil('table').css('background', 'red');
+            // $(this).closest('tr').css('background', 'red');
+
+            // 方法一
+            // 1.全部的 tr 都改成透明
+            // $('tr').css('background', 'transparent');
+            // 2.再把「有打勾的」 都變成藍色
+            // $('input:checked').closest('tr').css('background', 'lightblue');
+
+            // 方法二
+            // 要學會判斷使用者當時到底有沒有打勾，要用 prop
+            // 如果是要判斷預設值是否有打勾，那就用 attr 
+            if ($(this).prop('checked') === true) {
+                $(this).closest('tr').css('background', 'lightblue');
+            }
+            else {
+                $(this).closest('tr').css('background', 'transparent');
+            }
+
         });
     </script>
 </body>
