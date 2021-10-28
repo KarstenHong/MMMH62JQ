@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rwd absolute</title>
+    <style>
+        .wrap {
+            width: 800px;
+            height: 800px;
+            background-color: #ccc;
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 50px;
+            background-color: #afa;
+            position: absolute;
+            right: 0;
+        }
+
+        @media screen and (max-width:700px) {
+            .wrap {
+                width: 300px;
+                height: 300px;
+                background-color: #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box">On sale</div>
+    </div>
+</body>
+
+</html>

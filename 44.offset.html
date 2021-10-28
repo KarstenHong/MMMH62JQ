@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offset</title>
+    <style>
+        .header {
+            height: 2000px;
+            background-color: #ccc;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #faf;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="box"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        console.log('box offset:', $('.box').offset());
+        // Object 沒有順序的問題，只看 key ，給你 value 
+        // 用大括號，裡面的數據用逗號隔開，左邊是 key, 右邊是 value 成雙成對
+        // { key1:value1, key2:value2 }
+
+        // Object 取值，點表示法（如何給 key 的方法差異）
+        console.log('box offset top:', $('.box').offset().top);
+        console.log('box offset left:', $('.box').offset().left);
+
+        // Object 取值，中括號表示法（如何給 key 的方法差異）
+        const myKey1 = 'top';
+        const myKey2 = 'left';
+        console.log('box offset top:', $('.box').offset()[myKey1]);
+        console.log('box offset left:', $('.box').offset()[myKey2]);
+
+        // 中括號可以放變數，或是直接放字串也可以
+        console.log('box offset top:', $('.box').offset()['top']);
+        console.log('box offset left:', $('.box').offset()['left']);
+
+        $('.box').offset({
+            top: 50,
+            left: 100,
+        })
+
+    </script>
+</body>
+
+</html>
